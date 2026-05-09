@@ -30,6 +30,7 @@ public final class VoteDependencyPlugin extends Plugin {
             configuration = VotePluginConfiguration.load(DATA_DIRECTORY);
             service = new VoteService(configuration);
             api = service;
+            registerSharedServices();
             Log.info("MDT Vote Dependency loaded. config=@", configuration.getConfigFile());
         } catch (Exception exception) {
             throw new RuntimeException("MDT Vote Dependency init failed.", exception);
@@ -122,5 +123,19 @@ public final class VoteDependencyPlugin extends Plugin {
             builder.append(args[index]);
         }
         return builder.toString().trim();
+    }
+
+    private void registerSharedServices() {
+        registerSharedService("mdt.vote.api", api);
+        registerSharedService("com.mdt.vote.api.VoteDependencyApi", api);
+    }
+
+    private void registerSharedService(String key, Object service) {
+        try {
+            Class<?> hub = Class.forName("mdt.ServeMdtPlugin");
+            hub.getMethod("registerSharedService", String.class, Object.class).invoke(null, key, service);
+        } catch (Exception ignored) {
+            // Core hub is optional.
+        }
     }
 }
