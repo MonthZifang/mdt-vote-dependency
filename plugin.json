@@ -1,0 +1,7 @@
+{
+  "name": "mdt-vote-dependency",
+  "author": "monthzifang",
+  "main": "com.mdt.vote.VoteDependencyPlugin",
+  "description": "A reusable vote dependency plugin for Mindustry that supports shared vote sessions, HUD rendering, and action execution such as kick, spectate, redirect, world control, and custom messages.",
+  "version": "V1.0.0 - 157X"
+}

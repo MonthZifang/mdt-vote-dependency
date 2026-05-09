@@ -1,0 +1,22 @@
+{
+  "metadataVersion": 1,
+  "name": "mdt-vote-dependency",
+  "displayName": "MDT Vote Dependency",
+  "displayNameZh": "MDT 投票依赖",
+  "author": "monthzifang",
+  "description": "Provides a reusable vote workflow for Mindustry plugins and external APIs, with shared sessions, action execution, and HUD rendering support.",
+  "descriptionZh": "为 Mindustry 插件和外部 API 提供可复用的统一投票流程，支持共享投票会话、结果动作执行与 HUD 渲染联动。",
+  "version": "v1",
+  "requiredMarketVersion": "v1",
+  "channel": "modded",
+  "targets": ["mdt", "mdtx"],
+  "downloadUrls": [
+    "https://raw.githubusercontent.com/MonthZifang/mdt-vote-dependency/main/dist/mdt-vote-dependency.jar",
+    "https://raw.githubusercontent.com/MonthZifang/mdt-vote-dependency/main/plugin.json"
+  ],
+  "dependencies": [
+    "mdt-uhd-renderer"
+  ],
+  "repositoryUrl": "https://github.com/MonthZifang/mdt-vote-dependency",
+  "entry": "com.mdt.vote.VoteDependencyPlugin"
+}
